@@ -91,29 +91,30 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: [
             Expanded(
-                child: ListView.builder(
-              itemCount: messages.length,
-              itemBuilder: (context, index) {
-                final isMe = messages[index].startsWith("You:");
-                return Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: isMe
-                        ? const Color.fromARGB(255, 136, 103, 246)
-                        : Colors.grey[300], // Dark shade for "You" messages
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    messages[index],
-                    style: TextStyle(
-                        color:
-                            isMe ? Colors.white : Colors.black), // Text color
-                  ),
-                );
-              },
-            )),
+              child: ListView.builder(
+                itemCount: messages.length,
+                itemBuilder: (context, index) {
+                  final isMe = messages[index].startsWith("You:");
+                  return Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: isMe
+                          ? const Color.fromARGB(255, 136, 103, 246)
+                          : Colors.grey[300], // Dark shade for "You" messages
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      messages[index],
+                      style: TextStyle(
+                          color:
+                              isMe ? Colors.white : Colors.black), // Text color
+                    ),
+                  );
+                },
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
